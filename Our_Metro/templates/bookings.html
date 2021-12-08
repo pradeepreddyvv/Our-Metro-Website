@@ -7,8 +7,8 @@
 <!-- <p>Your current booking was, {{ start }} to {{ dest }}!</p> -->
 <p>Your current booking was, {{ metro_card['start'] }} to {{ metro_card['destination'] }} !</p>
 <p>Your current booking was from, FROM STATION NAME = {{
-    station['station_name']}}!</p>
-<p>Your current booking was with, STATION ID = {{ station['station_id'] }} !</p>
+    metro_card['start']}}!</p>
+
 <p>Your current booking times was {{ metro_card['s_time'] }} to {{ metro_card['d_time'] }}!</p>
 <p>Your current booking waiting time = {{ waiting_time }}!</p>
 <p>Your in line ID {{ station['line_id'] }}!</p>

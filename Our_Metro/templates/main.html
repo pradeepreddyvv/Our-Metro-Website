@@ -8,14 +8,15 @@
 {% if platform and station and boards %}
 
 
-<p>Your current booking was, {{ ticket['start'] }} to {{ ticket['destination']}} !</p>
-<p>Your current booking was, in METRO ID = {{ platform['station_id'] }} FROM Station name =
+<p>Your current booking was {{ ticket['start'] }} to {{ ticket['destination']}} !</p>
+<p>Your current booking was in METRO ID = {{ platform['station_id'] }} FROM Station name =
     {{ station['station_name']
     }}!</p>
-<p>Your timing to board and depart are, {{ platform['arrival_time'] }} to {{ platform['departure_time'] }}!</p>
-<p>Your current booking waiting time , {{ platform['waiting_time'] }}!</p>
-<p>Your in line ID , {{ station['line_id'] }}!</p>
-<p>Your enter in metro ID = , {{ boards['metro_id'] }}!</p>
+<p>Your timing to board and depart are {{ platform['arrival_time'] }} to {{ platform['departure_time'] }}!</p>
+<p>Your current booking waiting time is {{ platform['waiting_time'] }}!</p>
+<p>Your in line ID is {{ station['line_id'] }}!</p>
+<p>Your enter in metro ID = {{ boards['metro_id'] }}!</p>
+<p>Fare = {{ ticket['fare'] }}!</p>
 
 {% endif %}
 

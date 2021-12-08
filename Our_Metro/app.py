@@ -304,6 +304,14 @@ def report():
 def main():
 
     cursor = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
+    # if 'loggedin' in session:
+    #     session.pop('loggedin', None)
+    #     session.pop('start_station', None)
+    #     session.pop('email_id', None)
+    #     session.pop('name', None)
+    #     cursor = conn.cursor()
+    #     cursor.execute("ROLLBACK")
+    #     conn.commit()
 
     if request.method == 'POST' and 'start' in request.form and 'dest' in request.form and 'gender' in request.form:
         # Create variables for easy access
@@ -487,7 +495,7 @@ def main():
             print("platform       1st =", platform)
             conn.commit()
 
-            flash('You have successfully registered!')
+            flash('You have successfully booked!')
 
             return render_template('main.html',  station=station, boards=boards, platform=platform, gender=gender, ticket=ticket,)
     elif request.method == 'POST':
@@ -794,7 +802,7 @@ def bookings():
             conn.commit()
             # wait_t = metro_card['s_time'] - c_time
             # print("WAIT TIME = ", wait_t)
-            flash('You have successfully registered!')
+            flash('You have successfully booked!')
             return render_template('bookings.html', metro_id=metro_id, metro=metro, metro_card=metro_card, station=station, boards=boards, gender=gender, waiting_time=waiting_time,)
     elif request.method == 'POST':
         # Form is empty... (no POST data)
