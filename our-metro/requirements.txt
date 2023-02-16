@@ -1,5 +1,5 @@
 Flask == 2.1.2
-Werkzeug == 2.1.2
+Werkzeug == 2.2.3
 psycopg2
 click
 python-dotenv
